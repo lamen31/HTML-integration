@@ -1,0 +1,45 @@
+﻿@page "/historitransaksi"
+
+<div class="overlay"></div>
+<div class="masthead">
+    <div class="container h-100">
+        <div class="row h-100">
+            <div class="col-12 my-auto">
+                <img class="bni-logo" src="../assets/image/bni-white.png"><br><br><br>
+                <div class="masthead-content text-white">
+                    <h2 class="teks-nav">Cetak Transaksi Anda</h2><br>
+                </div>
+                <img class="nav-vektor2" src="../assets/image/img-histori2.png">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="social-icons2">
+    <div class="masthead-content" style="text-align: center;">
+        <h2 class="teks-hello2">Hello, <b class="nama-pelanggan">bambang pamungkas</b></h2>
+        <p id="teks" class="teks-desc4">Pilih periode cetak transaksi</p>
+        <p id="teks1" class="teks-desc5">Anda akan mencetak transaksi</p>
+        <p id="teks2" class="periode-terpilih">Periode bulan berjalan</p>
+        <p id="teks3" class="waktu-periode">01/04/2020 - 29/04/2020</p>
+    </div>
+    <div class="form-input-data">
+        <div id="btn-periode" class="col-md-12" style="text-align: center;">
+            <div class="form-group">
+                <button type="button" class="btn2 btn-outline-danger" onclick="btn1()">Periode bulan berjalan</button>
+                <button type="button" class="btn2 btn-outline-danger" style="margin-left: 0.5rem;">Periode 1 bulan terakhir</button>
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn2 btn-outline-danger">Periode bulan lalu</button>
+                <button type="button" class="btn2 btn-outline-danger" style="margin-left: 0.5rem;">10 transaksi terakhir</button>
+            </div>
+        </div>
+        <div id="btn-konfirmasi" class="col-md-12" style="text-align: center;">
+            <p><button type="button" class="btn btn-danger" id="myBtn">Ya</button></p>
+            <p><button type="button" class="btn btn-danger-no" onclick="btn2()">Tidak</button></p>
+        </div>
+    </div>
+</div>
+@code {
+
+}

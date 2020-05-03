@@ -1,0 +1,48 @@
+﻿@using Microsoft.AspNetCore.Components
+
+    <div class="social-icons">
+        <div class="masthead-content">
+            <h2 class="teks-hello">Hello, <b class="nama-pelanggan">bambang pamungkas</b></h2>
+            <p class="teks-desc3">Masukkan data buku tabungan Anda</p>
+            <label>Input</label>
+            <input type="text" id="testInput" class="jQKeyboard" placeholder="testing" value="" />
+        </div>
+        <div class="form-input-data">
+            <div class="col-md-6">
+                <form>
+                    <div class="form-group">
+                        <label class="teks-data">Nomor rekening</label>
+                        <select class="form-control">
+                            <option>232482323</option>
+                            <option>87716222</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="teks-data">Nomor baris pada buku</label>
+                        <input type="text" class="form-control" placeholder="nomor baris buku tabungan">
+                        <div class="invalid">
+                            Harap isi nomor baris
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="teks-data">Saldo terakhir pada buku</label>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">Rp</div>
+                            </div>
+                            <input type="password" class="form-control2" placeholder="saldo terakhir">
+                            <i class="material-icons visibility">visibility_off</i>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <button type="button" class="btn-lanjut">Lanjut</button>
+            </div>
+        </div>
+    </div>
+
+@code {
+
+}

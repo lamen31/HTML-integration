@@ -1,0 +1,66 @@
+﻿@page "/login"
+
+<div class="overlay"></div>
+<div class="masthead">
+    <div class="container h-100">
+        <div class="row h-100">
+            <div class="col-12 my-auto">
+                <img class="bni-logo" src="../assets/image/bni-white.png"><br><br><br>
+                <div class="masthead-content text-white">
+                    <h2 class="teks-nav">Cetak Transaksi Anda</h2><br>
+                </div>
+                <img class=@imgClass[indexImage] src=@imgSrc[indexImage]>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="social-icons2">
+    <div class="col-12 my-auto" style="text-align: center;">
+        @switch (caseTampilan)
+        {
+            case 1:
+                {
+
+                    <h2 id="teks-pin" class="teks-right-pin">Masukkan PIN ATM Anda</h2>
+                    if (isError)
+                    {
+                        <p id="teks-deskripsi" class="teks-desc2">Tekan "ENTER" jika selesai memasukkan PIN</p>
+                    }
+                    else
+                    {
+                        <p id="teks-error" class="error-pin">PIN yang anda masukkan salah. Kesempatan untuk mencoba 2x lagi</p>
+                    }
+                    <p id="input-pin"><input type="text" class="input-pin" name="pin" placeholder="******" @bind=@pin autofocus></p>
+                    <img id="pin" class="img-pin" src="../assets/image/input-pin.png" onclick="buttonError()">
+                    break;
+                }
+
+            case 2:
+                {
+
+                    <h2 id="teks-kartu" class="teks-right-kartu">Masukkan kartu ATM Anda</h2>
+                    <img id="edc" class="img-edc" src="../assets/image/edc.png" @onclick="UbahClass">
+                    break;
+                }
+        }
+    </div>
+</div>
+
+@code {
+    private bool isPin = false;
+    private bool isError = true;
+    private string pin = "123456";
+    private int caseTampilan = 2;
+    private int indexImage = 0;
+    private string[] imgSrc = { "../assets/image/vektor-a.png", "../assets/image/vektor-a.png" };
+    private string[] imgClass = { "nav-vektor", "nav-vektor2" };
+
+    private void UbahClass()
+    {
+        if (indexImage == 0)
+            indexImage = 1;
+        else
+            indexImage = 0;
+    }
+        }

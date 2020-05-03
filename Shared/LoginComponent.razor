@@ -1,0 +1,60 @@
+﻿@using Microsoft.AspNetCore.Components
+
+    <div class="col-md-8" style="margin-top: 6.5%; text-align: center;">
+        @switch (caseTampilan)
+        {
+            case 1:
+                {
+
+                    <h2 id="" class="teks-hello2">Masukan PIN ATM Anda</h2>
+                    if (isError)
+                    {
+                        <p id="" class="teks-desc2">Tekan "ENTER" jika selesai memasukkan PIN</p>
+                        <p id="input-pin"><input type="text" class="input-pin" name="pin" placeholder="******" @bind="pin" autofocus></p>
+                        if (pin == null)
+                        {
+                            <img id="pin" class="img-pin" src="../assets/image/input-pin.png" @onclick="@(()=>isError=false)" />
+                        }
+                        else
+                        {
+                            <img id="pin" class="img-pin" src="../assets/image/input-pin.png" @onclick="@(()=>OnClick.InvokeAsync("pilihmenu"))">
+                        }
+
+                    }
+                    else
+                    {
+                        <p id="teks-error" class="error-pin">PIN yang anda masukkan salah. Kesempatan untuk mencoba 2x lagi</p>
+                        <p id="input-pin"><input type="text" class="input-pin" name="pin" placeholder="******" @bind="pin" autofocus></p>
+
+                        if (pin != null)
+                        {
+                            <img id="pin" class="img-pin" src="../assets/image/input-pin.png" @onclick="@(()=>OnClick.InvokeAsync("pilihmenu"))">
+                        }
+                        else
+                        {
+                            <img id="pin" class="img-pin" src="../assets/image/input-pin.png" @onclick="@(()=>isError=false)" />
+                        }
+                    }
+
+                    break;
+                }
+
+            case 2:
+                {
+
+                    <h2 class="teks-hello2">Masukan Kartu ATM Anda</h2>
+                    <img class="img-edc" src="../../assets/img/edc.png" @onclick="@(()=>caseTampilan=1)">
+                    break;
+                }
+        }
+    </div>
+
+@code {
+    private bool isPin = false;
+    private bool isError = true;
+    private string pin;
+    private int caseTampilan = 2;
+    [Parameter]
+    public EventCallback<string> OnClick { get; set; }
+}
+
